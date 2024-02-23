@@ -85,12 +85,6 @@ const Hero = {
       },
     },
     {
-      name: 'heroTextColor',
-      title: 'Text Color',
-      group: 'theme',
-      type: 'simplerColor',
-    },
-    {
       name: 'heroBgColor',
       title: 'Background Color',
       group: 'theme',

@@ -8,6 +8,9 @@ const content = {
       marks: {
         annotations: [
           {
+            type: 'textColor',
+          },
+          {
             name: 'link',
             type: 'object',
             title: 'link',
