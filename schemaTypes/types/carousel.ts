@@ -15,19 +15,11 @@ export default {
       type: 'array',
       of: [{  type: 'object',
       fields: [
-        {
-          name: 'title',
-          title: 'Title',
-          type: 'string',
-          validation: Rule => [Rule.required().error('Title is required.')],
-        },
-        {
-          name: 'description',
-          title: 'Description',
-          type: 'text',
-          validation: Rule =>
-            Rule.required().error('Description is required.').max(320).error('Description cannot exceed 320 characters.'),
-        },
+       {
+        name: 'content',
+        title: 'Content',
+        type: 'content',
+      },
         {
           name: 'image',
           title: 'Image',
@@ -52,9 +44,22 @@ export default {
       ], }],
     },
     {
-      name: 'carouselTextColor',
-      title: 'Text Color',
-      type: 'simplerColor',
-    },
+      name: 'opacity',
+      title: 'Background Opacity',
+      type: 'number',
+      options: {
+        list: [
+          { title: '10', value: 10 },
+          { title: '20', value: 20 },
+          { title: '30', value: 30 },
+          { title: '40', value: 40 },
+          { title: '50', value: 50 },
+          { title: '75', value: 75 },
+          { title: '80', value: 80 },
+          { title: '90', value: 90 },
+          { title: '100', value: 100 },
+        ],
+      },
+  },
   ],
 };

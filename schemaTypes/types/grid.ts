@@ -34,19 +34,6 @@ const grid = defineField({
       group: 'columns',
     },
     {
-      title: 'Top margin',
-      name: 'topMargin',
-      type: 'string',
-      initialValue: 'default',
-      options: {
-        list: [
-          { title: 'Small', value: 'small' },
-          { title: 'Default', value: 'default' },
-          { title: 'Large', value: 'large' },
-        ],
-      },
-    },
-    {
       name: 'items',
       title: 'Items',
       group: 'items',

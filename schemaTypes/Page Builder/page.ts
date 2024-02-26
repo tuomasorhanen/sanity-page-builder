@@ -106,7 +106,6 @@ const Page = {
         { type: 'headingAndTitle' },
         { type: 'uiElement' },
         { type: 'grid' },
-        { type: 'spacer' },
         { type: 'faqList' },
         { type: 'carousel' },
         { type: 'contactForm' },

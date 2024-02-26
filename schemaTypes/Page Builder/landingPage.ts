@@ -82,65 +82,6 @@ const LandingPage = {
       },
       hidden: ({ parent }) => parent?.buttonContent !== 'image',
     },
-    {
-      name: 'backgroundColor',
-      title: 'Background Color',
-      type: 'string',
-      options: {
-        list: [
-          { title: 'Background', value: 'background' },
-          { title: 'Text', value: 'text' },
-          { title: 'Accent', value: 'accent' },
-          { title: 'Layer', value: 'layer' },
-          { title: 'Secondary', value: 'secondary' },
-          { title: 'White', value: 'white' },
-          { title: 'Black', value: 'black' },
-        ],
-        layout: 'radio',
-      },
-      hidden: ({ parent }) => parent?.buttonContent !== 'text',
-    },
-    {
-      name: 'textColor',
-      title: 'Text Color',
-      type: 'string',
-      options: {
-        list: [
-          { title: 'Background', value: 'background' },
-          { title: 'Text', value: 'text' },
-          { title: 'Accent', value: 'accent' },
-          { title: 'Layer', value: 'layer' },
-          { title: 'Secondary', value: 'secondary' },
-          { title: 'White', value: 'white' },
-          { title: 'Black', value: 'black' },
-        ],
-        layout: 'radio',
-      },
-      hidden: ({ parent }) => parent?.buttonContent !== 'text',
-    },
-    {
-      name: 'border',
-      title: 'Border',
-      type: 'boolean',
-    },
-    {
-      name: 'borderColor',
-      title: 'Border Color',
-      type: 'string',
-      options: {
-        list: [
-          { title: 'Background', value: 'background' },
-          { title: 'Text', value: 'text' },
-          { title: 'Accent', value: 'accent' },
-          { title: 'Layer', value: 'layer' },
-          { title: 'Secondary', value: 'secondary' },
-          { title: 'White', value: 'white' },
-          { title: 'Black', value: 'black' },
-        ],
-        layout: 'radio',
-      },
-      hidden: ({ parent }) => !parent.border,
-    },
   ],
   preview: {
     select: {

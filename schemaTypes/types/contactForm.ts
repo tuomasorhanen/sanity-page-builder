@@ -18,6 +18,12 @@ const ContactForm = defineField({
       },
     },
     {
+      name: 'title',
+      title: 'Title',
+      type: 'string',
+      description: 'This is the text that will appear above the form.',
+    },
+    {
       name: 'description',
       title: 'Description',
       type: 'text',

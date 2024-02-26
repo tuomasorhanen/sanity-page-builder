@@ -16,7 +16,7 @@ const columns = defineField({
       description: 'Items per row for phone',
       options: {
         list: [
-          {
+             {
             title: '1 columns',
             value: '1',
           },
@@ -31,10 +31,6 @@ const columns = defineField({
           {
             title: '4 columns',
             value: '4',
-          },
-          {
-            title: '5 columns',
-            value: '5',
           },
           {
             title: '6 columns',
@@ -50,7 +46,7 @@ const columns = defineField({
       description: 'Items per row for tablet set vertically',
       options: {
         list: [
-          {
+           {
             title: '1 columns',
             value: '1',
           },
@@ -65,10 +61,6 @@ const columns = defineField({
           {
             title: '4 columns',
             value: '4',
-          },
-          {
-            title: '5 columns',
-            value: '5',
           },
           {
             title: '6 columns',
@@ -84,7 +76,7 @@ const columns = defineField({
       description: 'Items per row for a small desktop',
       options: {
         list: [
-          {
+              {
             title: '1 columns',
             value: '1',
           },
@@ -99,10 +91,6 @@ const columns = defineField({
           {
             title: '4 columns',
             value: '4',
-          },
-          {
-            title: '5 columns',
-            value: '5',
           },
           {
             title: '6 columns',
