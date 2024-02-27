@@ -34,6 +34,17 @@ const grid = defineField({
       group: 'columns',
     },
     {
+      name: 'style',
+      title: 'Style',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Default', value: 'default' },
+          { title: 'carousel', value: 'carousel' },
+        ],
+      },
+    },
+    {
       name: 'items',
       title: 'Items',
       group: 'items',
