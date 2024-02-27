@@ -75,9 +75,10 @@ const Hero = {
       initialValue: 'image-bg-center',
       options: {
         list: [
-          { title: 'Background image with centered text', value: 'image-bg-center' },
-          { title: 'Simple hero with image on the right side', value: 'simple-image-right' },
-          { title: 'Simple hero with image on the left side', value: 'simple-image-left' },
+          { title: 'Background Image', value: 'image-bg-center' },
+          { title: 'Simple rigth', value: 'simple-image-right' },
+          { title: 'Simple left', value: 'simple-image-left' },
+          { title: 'Banner', value: 'banner' },
         ],
         validation: Rule => [Rule.required().error('A layout is required.')],
       },
