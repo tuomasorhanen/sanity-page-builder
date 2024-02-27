@@ -24,21 +24,10 @@ const Service = defineType({
       type: 'string',
     }),
     defineField({
-      name: 'description',
-      title: 'Description',
-      description: 'Description of the service',
-      validation: Rule => Rule.required().error('A service has to have a description!'),
-      type: 'text',
-    }),
-    defineField({
-      name: 'image',
-      title: 'Image',
-      description: 'Image of the service',
-      validation: Rule => Rule.required().warning('We should have at least one image for each service!'),
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
+      name: 'metadata',
+      title: 'Metadata',
+      type: 'metadata',
+      validation: Rule => Rule.required(),
     }),
     defineField({
       name: 'priceOptions',
