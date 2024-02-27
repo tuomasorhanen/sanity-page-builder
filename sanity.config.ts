@@ -16,13 +16,12 @@ export default defineConfig({
 
   plugins: [structureTool({ structure: Structure }), visionTool(), media(),
     simplerColorInput({
-      // Note: These are all optional
       defaultColorFormat: 'rgba',
       defaultColorList: [
-        { label: 'Light', value: '#ffffff' },
-        { label: 'Dark', value: '#333333' },
-        { label: 'Brand', value: '#ca786d' },
-        { label: 'Accent', value: '#626754' },
+        { label: 'Light', value: '#FFFFFF' },
+        { label: 'Dark', value: '#000000' },
+        { label: 'Accent', value: '#5C949C' },
+        { label: 'layer', value: '#FFF7F1' },
         { label: 'Custom...', value: 'custom' },
       ],
       enableSearch: true,
