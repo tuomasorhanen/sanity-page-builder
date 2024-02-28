@@ -6,13 +6,9 @@ import { media } from 'sanity-plugin-media'
 import { simplerColorInput } from 'sanity-plugin-simpler-color-input'
 import { Structure } from './schemaTypes/structure'
 
-
 export default defineConfig({
-  name: 'default',
-  title: 'Fysiosarianne draft',
-
-  projectId: 'x8b0csby',
-  dataset: 'production',
+  projectId: process.env.SANITY_STUDIO_PROJECT_ID,
+  dataset: process.env.SANITY_STUDIO_DATASET,
 
   plugins: [structureTool({ structure: Structure }), visionTool(), media(),
     simplerColorInput({
