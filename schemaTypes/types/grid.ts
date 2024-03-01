@@ -45,6 +45,18 @@ const grid = defineField({
       },
     },
     {
+      name: 'marginTop',
+      title: 'Margin Top',
+      type: 'string',
+      initialValue: 'default',
+      options: {
+        list: [
+          { title: 'Small', value: 'small' },
+          { title: 'default', value: 'default' },
+        ],
+      },
+    },
+    {
       name: 'items',
       title: 'Items',
       group: 'items',
