@@ -15,6 +15,7 @@ const Card = defineField({
         list: [
           { title: 'image-top', value: 'image-top' },
           { title: 'image-bg', value: 'image-bg' },
+          { title: 'simple', value: 'simple' },
         ],
         validation: Rule => [Rule.required().error('A layout is required.')],
       },
@@ -28,6 +29,7 @@ const Card = defineField({
       name: 'image',
       title: 'Image',
       type: 'image',
+      hidden: ({ parent }) => parent?.layout !== 'image-top' && parent?.layout !== 'image-bg',
       fields: [
         {
           name: 'alt',
