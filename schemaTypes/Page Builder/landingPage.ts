@@ -7,6 +7,11 @@ const LandingPage = {
   icon: RiPagesLine,
   fields: [
     {
+      name: 'buttonName',
+      title: 'Button Name',
+      type: 'string',
+    },
+    {
       name: 'callToAction',
       title: 'Call to action text',
       type: 'string',
@@ -82,10 +87,22 @@ const LandingPage = {
       },
       hidden: ({ parent }) => parent?.buttonContent !== 'image',
     },
+    {
+      name: 'style',
+      title: 'Style',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'style1', value: 'style1' },
+          { title: 'style2', value: 'style2' },
+        ],
+      },
+    }
+
   ],
   preview: {
     select: {
-      title: 'callToAction',
+      title: 'buttonName',
     },
   },
 };
