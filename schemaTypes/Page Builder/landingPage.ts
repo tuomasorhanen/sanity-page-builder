@@ -34,7 +34,7 @@ const LandingPage = {
       name: 'navigateToPage',
       title: 'Navigate to Page',
       type: 'reference',
-      to: { type: 'page' },
+      to: [{ type: 'page' }, { type: 'service' }],
       validation: Rule => [
         Rule.custom((value, context) => {
           if (context.parent.linkType === 'internal' && !value) {

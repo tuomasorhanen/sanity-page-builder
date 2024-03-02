@@ -7,8 +7,8 @@ import { simplerColorInput } from 'sanity-plugin-simpler-color-input'
 import { Structure } from './schemaTypes/structure'
 
 export default defineConfig({
-  projectId: process.env.SANITY_STUDIO_PROJECT_ID,
-  dataset: process.env.SANITY_STUDIO_DATASET,
+  projectId: "x8b0csby",
+  dataset: "production",
 
   plugins: [structureTool({ structure: Structure }), visionTool(), media(),
     simplerColorInput({
