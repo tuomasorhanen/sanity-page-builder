@@ -1,4 +1,5 @@
 import { GiNinjaHeroicStance } from 'react-icons/gi';
+import { Preview } from 'sanity';
 
 const Cta = {
   name: 'cta',
@@ -97,5 +98,20 @@ const Cta = {
       type: 'simplerColor',
     },
   ],
+  preview: {
+    select: {
+      layout: 'layout',
+      subtitle: 'hinnasto',
+      media: 'image',
+    },
+    prepare(selection) {
+      const { layout, media } = selection;
+      return {
+        title: 'Call To Action',
+        subtitle: layout,
+        media: media,
+      };
+    },
+  },
 };
 export default Cta;

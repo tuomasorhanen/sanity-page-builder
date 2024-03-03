@@ -78,10 +78,13 @@ const grid = defineField({
   preview: {
     select: {
       title: 'title',
+      subtitle: 'style',
     },
     prepare({ title }: { title: string }) {
       return {
-        title: `${title}`,
+        title: 'Grid',
+        subtitle: `${title}` ,
+
       };
     },
   },

@@ -25,6 +25,19 @@ const textContent = defineField({
       },
     },
   ],
+  preview: {
+    select: {
+      content: 'content',
+      style: 'style',
+    },
+    prepare(selection) {
+      const {style} = selection;
+      return {
+        title: 'Heading and Title',
+        subtitle: style,
+      };
+    },
+  },
 });
 
 export default textContent;

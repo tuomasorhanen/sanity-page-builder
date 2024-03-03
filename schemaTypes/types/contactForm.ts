@@ -43,6 +43,19 @@ const ContactForm = defineField({
       validation: Rule => [Rule.required().error('A thank you message is required.')],
     },
   ],
+  preview: {
+    select: {
+      title: 'title',
+      layout: 'layout',
+    },
+    prepare(selection) {
+      const {title, layout} = selection;
+      return {
+        title: 'Contact Form',
+        subtitle: layout,
+      };
+    },
+  },
 });
 
 export default ContactForm;

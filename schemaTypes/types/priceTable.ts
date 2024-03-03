@@ -22,6 +22,19 @@ const PriceTable = defineField({
       of: [{ type: 'reference', to: [{ type: 'service' }] }],
     }),
   ],
+  preview: {
+    select: {
+      location: 'location',
+      subtitle: 'hinnasto',
+    },
+    prepare(selection) {
+      const { location } = selection;
+      return {
+        title: 'Price table',
+        subtitle: location,
+      };
+    },
+  },
 });
 
 export default PriceTable;
