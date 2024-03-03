@@ -72,6 +72,16 @@ const grid = defineField({
           type: 'reference',
           to: [{ type: 'post' }],
         },
+        {
+          name: 'groups',
+          type: 'reference',
+          to: [{ type: 'groups' }],
+        },
+        {
+          name: 'offers',
+          type: 'reference',
+          to: [{ type: 'offers' }],
+        },
       ],
     },
   ],
