@@ -6,6 +6,15 @@ const PriceOption = defineType({
   type: 'object',
   fields: [
     defineField({
+      name: 'location',
+      title: 'Location',
+      description: 'Location for this price option',
+      type: 'string',
+      options: {
+        list: ['Tampere', 'Pirkkala', 'Lielahti'],
+      },
+    }),
+    defineField({
       name: 'duration',
       title: 'Duration/Session Count',
       description: 'Duration in minutes for massages or session count for group sessions',
