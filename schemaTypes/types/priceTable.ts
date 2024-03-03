@@ -15,6 +15,12 @@ const PriceTable = defineField({
       },
     }),
     defineField({
+      name: 'additionalInfo',
+      title: 'Additional info',
+      description: 'Add additional info.',
+      type: 'string',
+    }),
+    defineField({
       name: 'service',
       title: 'Service',
       description: 'Add a service.',
