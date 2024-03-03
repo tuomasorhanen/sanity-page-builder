@@ -11,7 +11,7 @@ const PriceOption = defineType({
       description: 'Location for this price option',
       type: 'string',
       options: {
-        list: ['Tampere', 'Pirkkala', 'Lielahti'],
+        list: ['Tampere', 'Pirkkala', 'Lielahti', 'all'],
       },
     }),
     defineField({
