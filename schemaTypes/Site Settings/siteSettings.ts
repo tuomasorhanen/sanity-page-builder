@@ -28,7 +28,6 @@ const siteSettings = defineType({
           name: 'aspectRatio',
           title: 'Aspect Ratio',
           type: 'number',
-          initialValue: 16/9,
           options: {
             list: [
               { title: '16:9', value: 16/9 },
