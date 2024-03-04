@@ -46,9 +46,9 @@ const Service = defineType({
     defineField({
       name: 'hero',
       title: 'Hero',
-      validation: Rule => Rule.required(),
       type: 'hero',
       options: { collapsible: true, collapsed: true },
+      hidden: ({ document }) => !document?.slug,
     }),
     defineField({
       name: 'content',
@@ -64,6 +64,7 @@ const Service = defineType({
         { type: 'contactForm' },
         { type: 'priceTable' },
       ],
+      hidden: ({ document }) => !document?.slug,
     }),
   ],
   preview: {

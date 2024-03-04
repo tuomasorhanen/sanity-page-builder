@@ -28,6 +28,7 @@ export default defineType({
       name: 'image',
       title: 'Image',
       type: 'image',
+      validation: Rule => Rule.required().error('Image is required'),
       fields: [
         {
           name: 'alt',
@@ -59,6 +60,7 @@ export default defineType({
       name: 'content',
       title: 'Content',
       type: 'content',
+      validation: Rule => [Rule.required().error('A blog groups has to have content.')],
     },
     defineField({
       name: 'excerpt',
@@ -70,6 +72,7 @@ export default defineType({
       name: 'showForm',
       title: 'Show Form',
       type: 'boolean',
+      initialValue: false,
       description: 'If checked, the form will be displayed at the bottom of the page.', 
     },
     {

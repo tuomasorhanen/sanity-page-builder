@@ -9,11 +9,13 @@ const LandingPage = {
     {
       name: 'buttonName',
       title: 'Button Name',
+      description: 'This name shold guide you in the studio. It is only visible in the studio.',
       type: 'string',
     },
     {
       name: 'callToAction',
       title: 'Call to action text',
+      description: 'This is the text that will be displayed on the button.',
       type: 'string',
       validation: Rule => [Rule.required().error('CTA is required.')],
     },
@@ -34,11 +36,12 @@ const LandingPage = {
       name: 'navigateToPage',
       title: 'Navigate to Page',
       type: 'reference',
-      to: [{ type: 'page' }, { type: 'service' }],
+      description: 'Select the page to navigate to. When selecting a service, make sure there is a slug and a page behind the service!',
+      to: [{ type: 'page' }, { type: 'service' }, { type: 'post' }, { type: 'offers' }, { type: 'groups' }],
       validation: Rule => [
         Rule.custom((value, context) => {
           if (context.parent.linkType === 'internal' && !value) {
-            return 'Navigation page is required.';
+            return 'Navigation page is required.'; 
           }
           return true;
         }),
@@ -106,6 +109,7 @@ const LandingPage = {
     {
       name: 'style',
       title: 'Style',
+      description: 'Buttons will default to style 2 if no style is selected.',
       type: 'string',
       options: {
         list: [

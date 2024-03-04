@@ -27,6 +27,7 @@ export default defineType({
     {
       name: 'image',
       title: 'Image',
+      validation: Rule => Rule.required().error('Image is required'),
       type: 'image',
       fields: [
         {
@@ -59,6 +60,7 @@ export default defineType({
       name: 'content',
       title: 'Content',
       type: 'content',
+      validation: Rule => [Rule.required().error('A post has to have content.')],
     },
     defineField({
       name: 'excerpt',
