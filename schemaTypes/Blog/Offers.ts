@@ -10,7 +10,6 @@ export default defineType({
     defineField({
       name: 'title',
       title: 'Title',
-      description: 'Your offers should have a title. This will be displayed on the offers preview card.',
       type: 'string',
       validation: Rule => [Rule.required().error('Title is required.')],
     }),
@@ -25,16 +24,37 @@ export default defineType({
         maxLength: 96,
       },
     }),
-    defineField({
+    {
       name: 'image',
       title: 'Image',
-      description: 'This image will be shown in the preview card for your offers.',
       type: 'image',
-      validation: Rule => [Rule.required().error('Main image is required.')],
+      fields: [
+        {
+          name: 'alt',
+          title: 'Alternative text',
+          type: 'string',
+        },
+        {
+          name: 'aspectRatio',
+          title: 'Aspect Ratio',
+          type: 'number',
+          options: {
+            list: [
+              { title: '16:9', value: 16/9 },
+              { title: '4:3', value: 4/3 },
+              { title: '1:1', value: 1/1 },
+              { title: '2:3', value: 2/3 },
+              { title: '3:2', value: 3/2 },
+              { title: '3:4', value: 3/4 },
+              { title: '9:16', value: 9/16 },
+            ],
+          },
+        }
+      ],
       options: {
         hotspot: true,
       },
-    }),
+    },
     {
       name: 'content',
       title: 'Content',
@@ -43,8 +63,8 @@ export default defineType({
     defineField({
       name: 'excerpt',
       title: 'Excerpt',
-      type: 'text',
-      validation: Rule => [Rule.required().error('A blog offers has to have an excerpt.')],
+      type: 'content',
+      validation: Rule => [Rule.required().error('A blog groups has to have an excerpt.')],
     }),
   ],
 
