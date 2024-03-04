@@ -66,6 +66,18 @@ export default defineType({
       type: 'content',
       validation: Rule => [Rule.required().error('A blog groups has to have an excerpt.')],
     }),
+    {
+      name: 'showForm',
+      title: 'Show Form',
+      type: 'boolean',
+      description: 'If checked, the form will be displayed at the bottom of the page.', 
+    },
+    {
+      name: 'form',
+      title: 'Form',
+      type: 'contactForm',
+      hidden: ({document}) => !document.showForm,
+    }
   ],
 
   preview: {
