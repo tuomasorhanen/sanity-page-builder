@@ -17,7 +17,7 @@ const content = {
             fields: [
               {
                 name: 'url',
-                type: 'url',
+                type: 'string',
               },
             ],
           },
