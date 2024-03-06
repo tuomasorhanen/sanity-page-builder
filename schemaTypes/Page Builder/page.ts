@@ -104,7 +104,6 @@ const Page = {
       of: [
         { type: 'cta' },
         { type: 'headingAndTitle' },
-        { type: 'uiElement' },
         { type: 'grid' },
         { type: 'faqList' },
         { type: 'carousel' },

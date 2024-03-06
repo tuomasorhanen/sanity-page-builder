@@ -17,7 +17,7 @@ const PriceOption = defineType({
     defineField({
       name: 'duration',
       title: 'Duration/Session Count',
-      description: 'Duration in minutes for massages or session count for group sessions',
+      description: 'number of given units',
       type: 'number',
     }),
     defineField({

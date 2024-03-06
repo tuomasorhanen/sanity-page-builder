@@ -14,6 +14,13 @@ export default defineType({
       validation: Rule => [Rule.required().error('Title is required.')],
     }),
     defineField({
+      name: 'description',
+      title: 'Description',
+      type: 'string',
+      validation: Rule => [Rule.required().error('Description is required.')],
+      description: 'Description of the post for seo',
+    }),
+    defineField({
       name: 'slug',
       title: 'Slug',
       description: 'Slug creates a navigation path to your offers.',

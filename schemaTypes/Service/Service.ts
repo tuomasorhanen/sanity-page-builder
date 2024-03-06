@@ -37,13 +37,6 @@ const Service = defineType({
       validation: Rule => Rule.required(),
     }),
     defineField({
-      name: 'features',
-      title: 'Features',
-      description: 'Features of the service. If applicable.',
-      type: 'array',
-      of: [{ type: 'string' }],
-    }),
-    defineField({
       name: 'hero',
       title: 'Hero',
       type: 'hero',
@@ -57,7 +50,6 @@ const Service = defineType({
       of: [
         { type: 'cta' },
         { type: 'headingAndTitle' },
-        { type: 'uiElement' },
         { type: 'grid' },
         { type: 'faqList' },
         { type: 'carousel' },

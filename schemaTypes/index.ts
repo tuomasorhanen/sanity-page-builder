@@ -17,7 +17,6 @@ import metaData from "./types/metadata";
 import PriceTable from "./types/priceTable";
 import PriceOption from "./types/pricing";
 import textContent from "./types/textContent";
-import uiElement from "./types/uiElement";
 import Cta from "./types/cta";
 import Hero from "./types/hero";
 
@@ -41,7 +40,6 @@ export const schemaTypes = [
     grid,
     Hero,
     Cta,
-    uiElement,
     content,
     PriceTable,
     faqList,
