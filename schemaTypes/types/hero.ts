@@ -18,16 +18,36 @@ const Hero = {
   ],
   fields: [
     {
+      name: 'layout',
+      title: 'Layout',
+      type: 'string',
+      group: 'content',
+      fieldSet: 'content',
+      initialValue: 'image-bg-center',
+      options: {
+        list: [
+          { title: 'Background Image', value: 'image-bg-center' },
+          { title: 'Simple rigth', value: 'simple-image-right' },
+          { title: 'Simple left', value: 'simple-image-left' },
+          { title: 'Banner', value: 'banner' },
+          { title: 'none', value: 'none'},
+        ],
+        validation: Rule => [Rule.required().error('A layout is required.')],
+      },
+    },
+    {
       name: 'content',
       title: 'Content',
       group: 'content',
       fieldSet: 'content',
       type: 'content',
+      hidden: ({ parent }) => parent.layout === 'none',
     },
     {
       name: 'image',
       title: 'Image',
       type: 'image',
+      hidden: ({ parent }) => parent.layout === 'none' || parent.layout === 'banner',
       fieldSet: 'content',
       group: 'content',
       fields: [
@@ -60,32 +80,17 @@ const Hero = {
     {
       name: 'buttons',
       title: 'Buttons',
+      hidden: ({ parent }) => parent.layout === 'none',
       group: 'content',
       fieldSet: 'content',
       type: 'array',
       of: [{ type: 'reference', to: [{ type: 'landingPage' }] }],
     },
     {
-      name: 'layout',
-      title: 'Layout',
-      type: 'string',
-      group: 'content',
-      fieldSet: 'content',
-      initialValue: 'image-bg-center',
-      options: {
-        list: [
-          { title: 'Background Image', value: 'image-bg-center' },
-          { title: 'Simple rigth', value: 'simple-image-right' },
-          { title: 'Simple left', value: 'simple-image-left' },
-          { title: 'Banner', value: 'banner' },
-        ],
-        validation: Rule => [Rule.required().error('A layout is required.')],
-      },
-    },
-    {
       name: 'opacity',
       title: 'Background Opacity',
       group: 'theme',
+      hidden: ({ parent }) => parent.layout === 'none',
       type: 'number',
       options: {
         list: [
@@ -104,6 +109,7 @@ const Hero = {
     {
       name: 'heroBgColor',
       title: 'Background Color',
+      hidden: ({ parent }) => parent.layout === 'none',
       group: 'theme',
       type: 'simplerColor',
     },
