@@ -23,13 +23,14 @@ const Hero = {
       type: 'string',
       group: 'content',
       fieldSet: 'content',
-      initialValue: 'image-bg-center',
+      initialValue: 'none',
       options: {
         list: [
           { title: 'Background Image', value: 'image-bg-center' },
           { title: 'Simple rigth', value: 'simple-image-right' },
           { title: 'Simple left', value: 'simple-image-left' },
           { title: 'Banner', value: 'banner' },
+          { title: 'Heading', value: 'heading' },
           { title: 'none', value: 'none'},
         ],
         validation: Rule => [Rule.required().error('A layout is required.')],
@@ -47,7 +48,7 @@ const Hero = {
       name: 'image',
       title: 'Image',
       type: 'image',
-      hidden: ({ parent }) => parent.layout === 'none' || parent.layout === 'banner',
+      hidden: ({ parent }) => parent.layout === 'none' || parent.layout === 'banner' || parent.layout === 'heading',
       fieldSet: 'content',
       group: 'content',
       fields: [
