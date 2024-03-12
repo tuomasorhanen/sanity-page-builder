@@ -31,6 +31,13 @@ export default defineType({
         maxLength: 96,
       },
     }),
+    defineField({
+      name: 'author',
+      title: 'Author',
+      type: 'reference',
+      to: [{ type: 'person' }],
+      validation: Rule => [Rule.required().error('A post has to have an author.')],
+    }),
     {
       name: 'image',
       title: 'Image',
@@ -75,6 +82,13 @@ export default defineType({
       type: 'content',
       validation: Rule => [Rule.required().error('A blog groups has to have an excerpt.')],
     }),
+    defineField({
+      name: 'publishedAt',
+      title: 'Published at',
+      type: 'datetime',
+      validation: Rule => [Rule.required().error('A post has to have a publish date.')],
+    }),
+    
   ],
 
   preview: {

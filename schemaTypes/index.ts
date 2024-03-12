@@ -19,6 +19,7 @@ import PriceOption from "./types/pricing";
 import textContent from "./types/textContent";
 import Cta from "./types/cta";
 import Hero from "./types/hero";
+import person from "./Person/Person";
 
 export const schemaTypes = [
     Page,
@@ -27,6 +28,7 @@ export const schemaTypes = [
     post,
     Offers,
     groups,
+    person,
     Service,
     faq,
 
