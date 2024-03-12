@@ -6,6 +6,21 @@ const PriceTable = defineField({
   type: 'object',
   fields: [
     defineField({
+      name: 'layout',
+      title: 'Layout',
+      type: 'string',
+      initialValue: 'default-table',
+      options: {
+        list: [
+          { title: 'default table', value: 'default-table' },
+          { title: 'cards', value: 'cards' },
+          { title: 'no buttons', value: 'no-buttons' },
+          { title: 'no price', value: 'no-price'}
+        ],
+      },
+      validation: Rule => Rule.required().error('A layout is required.'),
+    }),
+    defineField({
       name: 'location',
       title: 'Location',
       description: 'Location for this price option',
