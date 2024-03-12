@@ -22,7 +22,7 @@ const Hero = {
       title: 'Layout',
       type: 'string',
       group: 'content',
-      fieldSet: 'content',
+      fieldset: 'content',
       initialValue: 'none',
       options: {
         list: [
@@ -33,14 +33,14 @@ const Hero = {
           { title: 'Heading', value: 'heading' },
           { title: 'none', value: 'none'},
         ],
-        validation: Rule => [Rule.required().error('A layout is required.')],
       },
+      validation: Rule => Rule.required().error('A layout is required.'),
     },
     {
       name: 'content',
       title: 'Content',
       group: 'content',
-      fieldSet: 'content',
+      fieldset: 'content',
       type: 'content',
       hidden: ({ parent }) => parent.layout === 'none',
     },
@@ -49,7 +49,7 @@ const Hero = {
       title: 'Image',
       type: 'image',
       hidden: ({ parent }) => parent.layout === 'none' || parent.layout === 'banner' || parent.layout === 'heading',
-      fieldSet: 'content',
+      fieldset: 'content',
       group: 'content',
       fields: [
         {
@@ -83,7 +83,7 @@ const Hero = {
       title: 'Buttons',
       hidden: ({ parent }) => parent.layout === 'none',
       group: 'content',
-      fieldSet: 'content',
+      fieldset: 'content',
       type: 'array',
       of: [{ type: 'reference', to: [{ type: 'landingPage' }] }],
     },
