@@ -34,7 +34,6 @@ const Hero = {
           { title: 'none', value: 'none'},
         ],
       },
-      validation: Rule => Rule.required().error('A layout is required.'),
     },
     {
       name: 'content',
@@ -48,7 +47,6 @@ const Hero = {
       name: 'image',
       title: 'Image',
       type: 'image',
-      hidden: ({ parent }) => parent.layout === 'none' || parent.layout === 'banner' || parent.layout === 'heading',
       fieldset: 'content',
       group: 'content',
       fields: [
@@ -81,7 +79,6 @@ const Hero = {
     {
       name: 'buttons',
       title: 'Buttons',
-      hidden: ({ parent }) => parent.layout === 'none',
       group: 'content',
       fieldset: 'content',
       type: 'array',
@@ -91,7 +88,6 @@ const Hero = {
       name: 'opacity',
       title: 'Background Opacity',
       group: 'theme',
-      hidden: ({ parent }) => parent.layout === 'none',
       type: 'number',
       options: {
         list: [
@@ -110,7 +106,6 @@ const Hero = {
     {
       name: 'heroBgColor',
       title: 'Background Color',
-      hidden: ({ parent }) => parent.layout === 'none',
       group: 'theme',
       type: 'simplerColor',
     },
