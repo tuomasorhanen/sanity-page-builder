@@ -76,6 +76,30 @@ export default defineType({
       validation: Rule => [Rule.required().error('A blog groups has to have an excerpt.')],
     }),
     {
+      name: 'startDate',
+      title: 'Start Date',
+      type: 'date',
+      validation: Rule => Rule.required().error('Start Date is required.'),
+    },
+    {
+      name: 'endDate',
+      title: 'End Date',
+      type: 'date',
+      validation: Rule => Rule.required().error('End Date is required.'),
+    },
+    {
+      name: 'location',
+      title: 'Location',
+      type: 'location',
+         },
+    {
+      name: 'price',
+      title: 'Price',
+      type: 'priceOption',
+      validation: Rule => Rule.required().error('Price is required.'),
+    },
+    
+    {
       name: 'showForm',
       title: 'Show Form',
       type: 'boolean',

@@ -98,7 +98,7 @@ const Page = {
       group: 'content',
       hidden: ({ document }) => {
         const slug: any = document?.slug;
-        return slug?.current === 'blogi' || slug?.current === 'tarjoukset' || slug?.current === 'pienryhmat';
+        return slug?.current === 'blogi' || slug?.current === 'tarjoukset' || slug?.current === 'pienryhmat' || slug?.current === 'faq';
       },
       type: 'array',
       of: [

@@ -20,6 +20,7 @@ import textContent from "./types/textContent";
 import Cta from "./types/cta";
 import Hero from "./types/hero";
 import person from "./Person/Person";
+import location from "./types/location";
 
 export const schemaTypes = [
     Page,
@@ -44,5 +45,6 @@ export const schemaTypes = [
     Cta,
     content,
     PriceTable,
+    location,
     faqList,
     carousel,]

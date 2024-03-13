@@ -9,20 +9,12 @@ const Hero = {
     { title: 'Content', name: 'content', default: true },
     { title: 'Theme', name: 'theme' },
   ],
-  fieldsets: [
-    {
-      name: 'content',
-      title: 'Content',
-      options: { collapsible: true, collapsed: true },
-    },
-  ],
   fields: [
     {
       name: 'layout',
       title: 'Layout',
       type: 'string',
       group: 'content',
-      fieldset: 'content',
       initialValue: 'none',
       options: {
         list: [
@@ -39,14 +31,12 @@ const Hero = {
       name: 'content',
       title: 'Content',
       group: 'content',
-      fieldset: 'content',
       type: 'content',
     },
     {
       name: 'image',
       title: 'Image',
       type: 'image',
-      fieldset: 'content',
       group: 'content',
       fields: [
         {
@@ -79,7 +69,6 @@ const Hero = {
       name: 'buttons',
       title: 'Buttons',
       group: 'content',
-      fieldset: 'content',
       type: 'array',
       of: [{ type: 'reference', to: [{ type: 'landingPage' }] }],
     },
