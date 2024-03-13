@@ -126,8 +126,13 @@ const siteSettings = defineType({
         ]
       }],
       description: 'The social media links for the website, used for sharing and contact purposes.'
-    })
-    
+    }),
+    defineField({
+      name: 'gtmId',
+      title: 'Google Tag Manager ID',
+      type: 'string',
+      description: 'The Google Tag Manager ID for the website, used for tracking and analytics.',
+    }),
   ],
   preview: {
     select: {},
