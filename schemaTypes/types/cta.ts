@@ -66,6 +66,7 @@ const Cta = {
         list: [
           { title: 'image-bg-center-slim', value: 'image-bg-center-slim' },
           { title: 'simple-image-right', value: 'simple-image-right' },
+          { title: 'simple-image-right-centered', value: 'simple-image-right-centered' },
           { title: 'simple-image-left', value: 'simple-image-left' },
           { title: 'image-bg-center-wide', value: 'image-bg-center-wide' },
         ],
