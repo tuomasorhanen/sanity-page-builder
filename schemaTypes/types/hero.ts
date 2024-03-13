@@ -41,7 +41,6 @@ const Hero = {
       group: 'content',
       fieldset: 'content',
       type: 'content',
-      hidden: ({ parent }) => parent.layout === 'none',
     },
     {
       name: 'image',
