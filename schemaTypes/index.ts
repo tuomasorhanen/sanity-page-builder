@@ -19,8 +19,8 @@ import PriceOption from "./types/pricing";
 import textContent from "./types/textContent";
 import Cta from "./types/cta";
 import Hero from "./types/hero";
-import person from "./Person/Person";
-import location from "./types/location";
+import person from "./Entities/Person";
+import location from "./Entities/location";
 
 export const schemaTypes = [
     Page,
@@ -28,6 +28,7 @@ export const schemaTypes = [
     siteSettings,
     post,
     Offers,
+    location,
     groups,
     person,
     Service,
@@ -45,6 +46,5 @@ export const schemaTypes = [
     Cta,
     content,
     PriceTable,
-    location,
     faqList,
     carousel,]

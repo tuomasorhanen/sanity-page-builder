@@ -13,9 +13,7 @@ const PriceTable = defineField({
       options: {
         list: [
           { title: 'default table', value: 'default-table' },
-          { title: 'cards', value: 'cards' },
-          { title: 'no buttons', value: 'no-buttons' },
-          { title: 'no price', value: 'no-price'}
+          { title: 'dropdown banner', value: 'dropdown-banner'},
         ],
       },
       validation: Rule => Rule.required().error('A layout is required.'),
@@ -24,15 +22,17 @@ const PriceTable = defineField({
       name: 'location',
       title: 'Location',
       description: 'Location for this price option',
-      type: 'string',
-      options: {
-        list: ['Tampere', 'Pirkkala', 'Lielahti', 'All'],
-      },
+      type: 'array',
+      of: [{ type: 'reference', to: [{ type: 'location' }] }],
     }),
     defineField({
-      name: 'additionalInfo',
-      title: 'Additional info',
-      description: 'Add additional info.',
+      name: 'title',
+      title: 'Title',
+      type: 'string',
+    }),
+    defineField({
+      name: 'description',
+      title: 'Description',
       type: 'string',
     }),
     defineField({
@@ -45,15 +45,8 @@ const PriceTable = defineField({
   ],
   preview: {
     select: {
-      location: 'location',
-      subtitle: 'hinnasto',
-    },
-    prepare(selection) {
-      const { location } = selection;
-      return {
-        title: 'Price table',
-        subtitle: location,
-      };
+      title: 'title',
+      subtitle: 'description',
     },
   },
 });

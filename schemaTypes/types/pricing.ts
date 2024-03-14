@@ -9,10 +9,8 @@ const PriceOption = defineType({
       name: 'location',
       title: 'Location',
       description: 'Location for this price option',
-      type: 'string',
-      options: {
-        list: ['Tampere', 'Pirkkala', 'Lielahti', 'all'],
-      },
+      type: 'reference',
+      to: [{ type: 'location' }],
     }),
     defineField({
       name: 'duration',

@@ -3,8 +3,14 @@
 const location = {
     name: 'location',
     title: 'Location',
-    type: 'object',
+    type: 'document',
     fields: [
+      {
+        name: 'title',
+        title: 'Title',
+        type: 'string',
+        validation: Rule => Rule.required().error('Location Title is required.'),
+      },
       {
         name: 'city',
         title: 'City',
