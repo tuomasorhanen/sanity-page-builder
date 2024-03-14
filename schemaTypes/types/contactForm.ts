@@ -16,37 +16,17 @@ const ContactForm = defineField({
         validation: Rule => [Rule.required().error('A layout is required.')],
       },
     },
-    {
-      name: 'title',
-      title: 'Title',
-      type: 'string',
-      description: 'This is the text that will appear above the form.',
-    },
-    {
-      name: 'description',
-      title: 'Description',
-      type: 'text',
-      description: 'This is the text that will appear above the form.',
-    },
-    {
-      name: 'thankYouMessage',
-      title: 'Thank You Message',
-      type: 'text',
-      description: 'This is the text that will appear after the form is submitted.',
-      validation: Rule => [Rule.required().error('A thank you message is required.')],
-    },
+  {
+    name: 'form',
+    title: 'Form',
+    type: 'reference',
+    to: [{ type: 'form' }],
+  }
   ],
   preview: {
     select: {
-      title: 'title',
-      layout: 'layout',
-    },
-    prepare(selection) {
-      const {title, layout} = selection;
-      return {
-        title: 'Contact Form',
-        subtitle: layout,
-      };
+      title: 'layout',
+      subtitle: 'form.title',
     },
   },
 });

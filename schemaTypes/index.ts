@@ -20,7 +20,8 @@ import textContent from "./types/textContent";
 import Cta from "./types/cta";
 import Hero from "./types/hero";
 import person from "./Entities/Person";
-import location from "./Entities/location";
+import Form from "./Entities/Form";
+import location from "./Entities/Location";
 
 export const schemaTypes = [
     Page,
@@ -31,6 +32,7 @@ export const schemaTypes = [
     location,
     groups,
     person,
+    Form,
     Service,
     faq,
 
