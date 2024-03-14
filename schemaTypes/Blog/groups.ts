@@ -63,12 +63,6 @@ export default defineType({
         hotspot: true,
       },
     },
-    {
-      name: 'content',
-      title: 'Content',
-      type: 'content',
-      validation: Rule => [Rule.required().error('A blog groups has to have content.')],
-    },
     defineField({
       name: 'excerpt',
       title: 'Excerpt',
@@ -88,30 +82,21 @@ export default defineType({
       validation: Rule => Rule.required().error('End Date is required.'),
     },
     {
-      name: 'location',
-      title: 'Location',
-      type: 'location',
-         },
-    {
       name: 'price',
       title: 'Price',
       type: 'priceOption',
       validation: Rule => Rule.required().error('Price is required.'),
     },
-    
-    {
-      name: 'showForm',
-      title: 'Show Form',
-      type: 'boolean',
-      initialValue: false,
-      description: 'If checked, the form will be displayed at the bottom of the page.', 
-    },
-    {
-      name: 'form',
-      title: 'Form',
-      type: 'contactForm',
-      hidden: ({document}) => !document.showForm,
-    }
+    defineField({
+      name: 'content',
+      title: 'Content',
+      type: 'array',
+      of: [
+        { type: 'headingAndTitle' },
+        { type: 'contactForm' },
+      ],
+      hidden: ({ document }) => !document?.slug,
+    }),
   ],
 
   preview: {
