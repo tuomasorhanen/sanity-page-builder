@@ -9,9 +9,36 @@ const Page = {
   groups: [
     { title: 'Configuration', name: 'configuration'},
     { title: 'Page Metadata', name: 'pageMetadata' },
-    { title: 'Content', name: 'content', default: true },
+    { title: 'Content', name: 'content'},
   ],
   fields: [
+    defineField({
+      name: 'hero',
+      title: 'Hero',
+      validation: Rule => Rule.required(),
+      group: 'content',
+      type: 'hero',
+      options: { collapsible: true, collapsed: true },
+    }),
+    defineField({
+      name: 'content',
+      title: 'Content',
+      group: 'content',
+      hidden: ({ document }) => {
+        const slug: any = document?.slug;
+        return slug?.current === 'blogi' || slug?.current === 'tarjoukset' || slug?.current === 'pienryhmat' || slug?.current === 'faq';
+      },
+      type: 'array',
+      of: [
+        { type: 'cta' },
+        { type: 'headingAndTitle' },
+        { type: 'grid' },
+        { type: 'faqList' },
+        { type: 'carousel' },
+        { type: 'contactForm' },
+        { type: 'priceTable' },
+      ],
+    }),
     defineField({
       name: 'name',
       title: 'Name',
@@ -83,33 +110,6 @@ const Page = {
       type: 'metadata',
       validation: Rule => Rule.required(),
       group: 'pageMetadata',
-    }),
-    defineField({
-      name: 'hero',
-      title: 'Hero',
-      validation: Rule => Rule.required(),
-      group: 'content',
-      type: 'hero',
-      options: { collapsible: true, collapsed: true },
-    }),
-    defineField({
-      name: 'content',
-      title: 'Content',
-      group: 'content',
-      hidden: ({ document }) => {
-        const slug: any = document?.slug;
-        return slug?.current === 'blogi' || slug?.current === 'tarjoukset' || slug?.current === 'pienryhmat' || slug?.current === 'faq';
-      },
-      type: 'array',
-      of: [
-        { type: 'cta' },
-        { type: 'headingAndTitle' },
-        { type: 'grid' },
-        { type: 'faqList' },
-        { type: 'carousel' },
-        { type: 'contactForm' },
-        { type: 'priceTable' },
-      ],
     }),
   ],
   preview: {

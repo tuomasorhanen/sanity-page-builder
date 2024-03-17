@@ -1,5 +1,6 @@
 import { defineField, defineType } from 'sanity';
 import { ImBlogger2 } from 'react-icons/im';
+import { CharacterCounter } from '../../components/ChatacterCount';
 
 export default defineType({
   name: 'offers',
@@ -16,9 +17,12 @@ export default defineType({
     defineField({
       name: 'description',
       title: 'Description',
-      type: 'string',
-      validation: Rule => [Rule.required().error('Description is required.')],
-      description: 'Description of the post for seo',
+      type: 'text',
+      components: {
+        input: CharacterCounter,
+      },
+      description: 'The description of the website, used for SEO and social media sharing. (Aim for 80 - 160 characters)',
+      validation: rule => rule.min(80).max(180).warning('Your description should be between 80-180 characters - Google recommends around 160 characters')
     }),
     defineField({
       name: 'slug',
@@ -80,7 +84,7 @@ export default defineType({
   preview: {
     select: {
       title: 'title',
-      media: 'mainImage',
+      media: 'image',
     },
   },
 });

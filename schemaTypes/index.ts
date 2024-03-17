@@ -1,10 +1,10 @@
-import Offers from "./Blog/Offers";
-import groups from "./Blog/groups";
-import post from "./Blog/post";
-import faq from "./Faq/faq";
+import Offers from "./Currents/Offers";
+import groups from "./Currents/groups";
+import post from "./Currents/post";
+import faq from "./Entities/faq";
 import LandingPage from "./Page Builder/landingPage";
 import Page from "./Page Builder/page";
-import Service from "./Service/Service";
+import Service from "./Entities/Service";
 import siteSettings from "./Site Settings/siteSettings";
 import Card from "./types/card";
 import carousel from "./types/carousel";

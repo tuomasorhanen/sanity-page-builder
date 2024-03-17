@@ -1,8 +1,9 @@
-
+import { FaLocationDot } from "react-icons/fa6";
 
 const location = {
     name: 'location',
     title: 'Location',
+    icon: FaLocationDot,
     type: 'document',
     fields: [
       {

@@ -1,10 +1,10 @@
-import { RiPagesLine } from 'react-icons/ri';
+import { RxSwitch } from "react-icons/rx";
 
 const LandingPage = {
   name: 'landingPage',
   title: 'Landing Page',
   type: 'document',
-  icon: RiPagesLine,
+  icon: RxSwitch,
   fields: [
     {
       name: 'buttonName',
@@ -60,7 +60,6 @@ const LandingPage = {
         }),
       ],
     },
-
     {
       name: 'buttonContent',
       title: 'Button Content',
@@ -123,6 +122,8 @@ const LandingPage = {
   preview: {
     select: {
       title: 'buttonName',
+      subtitle: 'buttonContent',
+      media: 'image',
     },
   },
 };

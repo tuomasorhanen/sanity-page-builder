@@ -1,9 +1,10 @@
 import { defineField, defineType } from 'sanity';
 import { ImBlogger2 } from 'react-icons/im';
+import { CharacterCounter } from '../../components/ChatacterCount';
 
 export default defineType({
-  name: 'post',
-  title: 'Post',
+  name: 'groups',
+  title: 'groups',
   type: 'document',
   icon: ImBlogger2,
   fields: [
@@ -16,33 +17,29 @@ export default defineType({
     defineField({
       name: 'description',
       title: 'Description',
-      type: 'string',
-      validation: Rule => [Rule.required().error('Description is required.')],
-      description: 'Description of the post for seo',
+      type: 'text',
+      components: {
+        input: CharacterCounter,
+      },
+      description: 'The description of the website, used for SEO and social media sharing. (Aim for 80 - 160 characters)',
+      validation: rule => rule.min(80).max(180).warning('Your description should be between 80-180 characters - Google recommends around 160 characters')
     }),
     defineField({
       name: 'slug',
       title: 'Slug',
-      description: 'Slug creates a navigation path to your post.',
+      description: 'Slug creates a navigation path to your groups.',
       type: 'slug',
-      validation: Rule => [Rule.required().error('A post without a slug can not be navigated to.')],
+      validation: Rule => [Rule.required().error('A groups without a slug can not be navigated to.')],
       options: {
         source: 'title',
         maxLength: 96,
       },
     }),
-    defineField({
-      name: 'author',
-      title: 'Author',
-      type: 'reference',
-      to: [{ type: 'person' }],
-      validation: Rule => [Rule.required().error('A post has to have an author.')],
-    }),
     {
       name: 'image',
       title: 'Image',
-      validation: Rule => Rule.required().error('Image is required'),
       type: 'image',
+      validation: Rule => Rule.required().error('Image is required'),
       fields: [
         {
           name: 'alt',
@@ -70,31 +67,47 @@ export default defineType({
         hotspot: true,
       },
     },
-    {
-      name: 'content',
-      title: 'Content',
-      type: 'content',
-      validation: Rule => [Rule.required().error('A post has to have content.')],
-    },
     defineField({
       name: 'excerpt',
       title: 'Excerpt',
       type: 'content',
       validation: Rule => [Rule.required().error('A blog groups has to have an excerpt.')],
     }),
+    {
+      name: 'startDate',
+      title: 'Start Date',
+      type: 'date',
+      validation: Rule => Rule.required().error('Start Date is required.'),
+    },
+    {
+      name: 'endDate',
+      title: 'End Date',
+      type: 'date',
+      validation: Rule => Rule.required().error('End Date is required.'),
+    },
+    {
+      name: 'price',
+      title: 'Price',
+      options: { collapsible: true, collapsed: true,},
+      type: 'priceOption',
+      validation: Rule => Rule.required().error('Price is required.'),
+    },
     defineField({
-      name: 'publishedAt',
-      title: 'Published at',
-      type: 'datetime',
-      validation: Rule => [Rule.required().error('A post has to have a publish date.')],
+      name: 'content',
+      title: 'Content',
+      type: 'array',
+      of: [
+        { type: 'headingAndTitle' },
+        { type: 'contactForm' },
+      ],
+      hidden: ({ document }) => !document?.slug,
     }),
-    
   ],
 
   preview: {
     select: {
       title: 'title',
-      media: 'mainImage',
+      media: 'image',
     },
   },
 });

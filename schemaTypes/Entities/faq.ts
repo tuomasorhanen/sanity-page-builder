@@ -1,6 +1,9 @@
+import { FaQuestion } from "react-icons/fa";
+
 export default {
   name: 'faq',
   title: 'FAQ',
+  icon: FaQuestion,
   type: 'document',
   fields: [
     {

@@ -1,5 +1,6 @@
 import { RiSettings5Line } from 'react-icons/ri';
 import { defineType, defineField } from 'sanity';
+import {CharacterCounter} from '../../components/ChatacterCount';
 
 const siteSettings = defineType({
   name: 'siteSettings',
@@ -52,15 +53,21 @@ const siteSettings = defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
-      description: 'The title of the website, used for SEO and browser tabs.',
-      validation: Rule => Rule.required(),
+      components: {
+        input: CharacterCounter,
+      },
+      description: 'The title of the website, used for SEO and browser tabs. (Aim for 40 - 60 characters)',
+      validation: rule => rule.max(60).warning('Shorter titles are usually better - Google recommends ususally between 40-60 characters')
     }),
     defineField({
       name: 'description',
       title: 'Description',
       type: 'text',
-      description: 'The description of the website, used for SEO and social media sharing.',
-      validation: Rule => Rule.required(),
+      components: {
+        input: CharacterCounter,
+      },
+      description: 'The description of the website, used for SEO and social media sharing. (Aim for 80 - 160 characters)',
+      validation: rule => rule.min(80).max(180).warning('Your description should be between 80-180 characters - Google recommends around 160 characters')
     }),
     defineField({
       name: 'image',
@@ -85,14 +92,14 @@ const siteSettings = defineType({
         layout: 'tags',
       },
       description: 'The keywords for the website, used for SEO.',
-      validation: Rule => Rule.required(),
+      validation: Rule => Rule.required().min(5).max(10).warning('You should have between 5-10 keywords'),
     }),
     defineField({
       name: 'domain',
       title: 'Domain',
       type: 'string',
       description: 'The URL of the website, used for SEO in the format wwww.domain.com',
-      validation: Rule => Rule.required(),
+      validation: Rule => Rule.required().regex(/^www\..+\.(com|org|net|io|fi)$/).error('Invalid domain format. Domain should be in the format www.domain.com')
     }),
     defineField({
       name: 'socialMedia',

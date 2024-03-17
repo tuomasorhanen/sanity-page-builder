@@ -1,6 +1,9 @@
+import { SiReacthookform } from "react-icons/si";
+
 const Form = {
     name: 'form',
     title: 'Form',
+    icon: SiReacthookform,
     type: 'document',
     fields: [
         {
