@@ -97,8 +97,13 @@ export default defineType({
       title: 'Content',
       type: 'array',
       of: [
+        { type: 'cta' },
         { type: 'headingAndTitle' },
+        { type: 'grid' },
+        { type: 'faqList' },
+        { type: 'carousel' },
         { type: 'contactForm' },
+        { type: 'priceTable' },
       ],
       hidden: ({ document }) => !document?.slug,
     }),
