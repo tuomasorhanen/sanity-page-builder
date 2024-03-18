@@ -134,6 +134,57 @@ const siteSettings = defineType({
       }],
       description: 'The social media links for the website, used for sharing and contact purposes.'
     }),
+    defineField({
+      name: 'contact',
+      title: 'Contact',
+      type: 'object',
+      fields: [
+        {
+          name: 'showEmailInFooter',
+          title: 'Show Email in Footer',
+          type: 'boolean',
+          description: 'Show the email address in the footer.',
+          initialValue: false,
+        },
+        {
+          name: 'email',
+          title: 'Email',
+          type: 'email',
+          description: 'The email address for the website, used for contact purposes.',
+          validation: Rule => Rule.required()
+        },
+        {
+          name: 'showPhoneInFooter',
+          title: 'Show Phone in Footer',
+          type: 'boolean',
+          description: 'Show the phone number in the footer.',
+          initialValue: false,
+        },
+        {
+          name: 'phone',
+          title: 'Phone',
+          type: 'string',
+          description: 'The phone number for the website, used for contact purposes.',
+          validation: Rule => Rule.required()
+        },
+        {
+          name: 'showLocationsInFooter',
+          title: 'Show Locations in Footer',
+          type: 'boolean',
+          description: 'Show the Locations in the footer.',
+          initialValue: false,
+        },
+        {
+          name: 'locations',
+          title: 'Locations',
+          type: 'array',
+          of: [{ type: 'reference', to: [{ type: 'location' }], }],
+          description: 'The locations for the business, used for contact purposes.',
+          validation: Rule => Rule.required()
+        }
+      ],
+      description: 'The contact details for the website, used for contact purposes.'
+    }),
   ],
   preview: {
     select: {},
