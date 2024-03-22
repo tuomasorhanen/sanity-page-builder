@@ -24,6 +24,17 @@ const textContent = defineField({
         validation: Rule => [Rule.required().error('A style is required.')],
       },
     },
+    {
+      name: 'animation',
+      title: 'Animation',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'none', value: 'none' },
+          { title: 'fade-in', value: 'fade-in' },
+        ],
+      },
+    }
   ],
   preview: {
     select: {

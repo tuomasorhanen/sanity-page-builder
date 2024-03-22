@@ -18,7 +18,6 @@ export default defineConfig({
         { label: 'Dark', value: '#000000' },
         { label: 'Accent', value: '#5C949C' },
         { label: 'layer', value: '#FFF7F1' },
-        { label: 'Custom...', value: 'custom' },
       ],
       enableSearch: true,
     })],

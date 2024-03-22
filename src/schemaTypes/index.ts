@@ -7,7 +7,6 @@ import Page from "./Page Builder/page";
 import Service from "./Entities/Service";
 import siteSettings from "./Site Settings/siteSettings";
 import Card from "./types/card";
-import carousel from "./types/carousel";
 import columns from "./types/columns";
 import ContactForm from "./types/contactForm";
 import content from "./types/content";
@@ -49,4 +48,4 @@ export const schemaTypes = [
     content,
     PriceTable,
     faqList,
-    carousel,]
+]

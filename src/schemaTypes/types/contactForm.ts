@@ -16,6 +16,18 @@ const ContactForm = defineField({
         validation: Rule => [Rule.required().error('A layout is required.')],
       },
     },
+    {
+      name: 'animation',
+      title: 'Animation',
+      type: 'string',
+      initialValue: 'none',
+      options: {
+        list: [
+          { title: 'none', value: 'none' },
+          { title: 'fade-in', value: 'fade-in' },
+        ],
+      },
+    },
   {
     name: 'form',
     title: 'Form',

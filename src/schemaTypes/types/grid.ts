@@ -45,6 +45,17 @@ const grid = defineField({
       },
     },
     {
+      name: 'animation',
+      title: 'Animation',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'none', value: 'none' },
+          { title: 'fade-in', value: 'fade-in' },
+        ],
+      },
+    },
+    {
       name: 'marginTop',
       title: 'Margin Top',
       type: 'string',

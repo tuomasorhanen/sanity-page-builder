@@ -42,6 +42,18 @@ const PriceTable = defineField({
       type: 'array',
       of: [{ type: 'reference', to: [{ type: 'service' }] }],
     }),
+    {
+      name: 'animation',
+      title: 'Animation',
+      type: 'string',
+      initialValue: 'none',
+      options: {
+        list: [
+          { title: 'none', value: 'none' },
+          { title: 'fade-in', value: 'fade-in' },
+        ],
+      },
+    }
   ],
   preview: {
     select: {

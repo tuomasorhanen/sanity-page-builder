@@ -52,7 +52,6 @@ const Service = defineType({
         { type: 'headingAndTitle' },
         { type: 'grid' },
         { type: 'faqList' },
-        { type: 'carousel' },
         { type: 'contactForm' },
         { type: 'priceTable' },
       ],

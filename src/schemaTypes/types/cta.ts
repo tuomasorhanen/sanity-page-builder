@@ -74,6 +74,19 @@ const Cta = {
       },
     },
     {
+      name: 'animation',
+      title: 'Animation',
+      group: 'theme',
+      type: 'string',
+      initialValue: 'none',
+      options: {
+        list: [
+          { title: 'none', value: 'none' },
+          { title: 'fade-in', value: 'fade-in' },
+        ],
+      },
+    },
+    {
       name: 'opacity',
       title: 'Background Opacity',
       group: 'theme',
