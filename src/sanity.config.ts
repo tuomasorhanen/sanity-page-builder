@@ -16,7 +16,7 @@ export default defineConfig({
       defaultColorList: [
         { label: 'Light', value: '#FFFFFF' },
         { label: 'Dark', value: '#000000' },
-        { label: 'Accent', value: '#5C949C' },
+        { label: 'Accent', value: '#3E6E70' },
         { label: 'layer', value: '#FFF7F1' },
       ],
       enableSearch: true,
