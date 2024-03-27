@@ -29,7 +29,7 @@ export default defineType({
       title: 'Slug',
       description: 'Slug creates a navigation path to your groups.',
       type: 'slug',
-      validation: Rule => [Rule.required().error('A groups without a slug can not be navigated to.')],
+      validation: Rule => [Rule.required().warning('A groups without a slug can not be navigated to.')],
       options: {
         source: 'title',
         maxLength: 96,
@@ -77,20 +77,17 @@ export default defineType({
       name: 'startDate',
       title: 'Start Date',
       type: 'date',
-      validation: Rule => Rule.required().error('Start Date is required.'),
     },
     {
       name: 'endDate',
       title: 'End Date',
       type: 'date',
-      validation: Rule => Rule.required().error('End Date is required.'),
     },
     {
       name: 'price',
       title: 'Price',
       options: { collapsible: true, collapsed: true,},
       type: 'priceOption',
-      validation: Rule => Rule.required().error('Price is required.'),
     },
     defineField({
       name: 'content',
