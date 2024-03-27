@@ -25,6 +25,13 @@ const Form = {
             validation: (Rule) => Rule.required(),
         },
         {
+            name: 'thankYouMessage',
+            title: 'Thank you message',
+            type: 'text',
+            description: 'Message to display after form submission.',
+            validation: (Rule) => Rule.required(),
+        },
+        {
             name: 'fields',
             title: 'Fields',
             type: 'array',
