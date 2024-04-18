@@ -106,6 +106,28 @@ const LandingPage = {
       hidden: ({ parent }) => parent?.buttonContent !== 'image',
     },
     {
+      name: 'buttonPurpose',
+      title: 'Button Purpose',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Navigation', value: 'navigation' },
+          { title: 'Purchase', value: 'purchase' },
+          { title: 'Download', value: 'download' },
+          { title: 'Contact', value: 'contact' },
+          { title: 'Other', value: 'other' },
+        ],
+        layout: 'radio',
+      },
+    },
+    {
+      name: 'saleValue',
+      title: 'Sale Value',
+      type: 'number',
+      description: 'The value of the sale. This is only required if the button purpose is purchase.',
+      hidden: ({ parent }) => parent?.buttonPurpose !== 'purchase',
+    },
+    {
       name: 'style',
       title: 'Style',
       description: 'Buttons will default to style 2 if no style is selected.',
