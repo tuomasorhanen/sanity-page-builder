@@ -123,7 +123,7 @@ const LandingPage = {
     {
       name: 'saleValue',
       title: 'Sale Value',
-      type: 'number',
+      type: 'string',
       description: 'The value of the sale. This is only required if the button purpose is purchase.',
       hidden: ({ parent }) => parent?.buttonPurpose !== 'purchase',
     },
